@@ -9,6 +9,6 @@ describe('my-angular-cli-seed App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!!');
+    expect(page.getParagraphText()).toEqual('Welcome to my-angular-cli-seed!!');
   });
 });
