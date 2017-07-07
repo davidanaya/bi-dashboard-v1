@@ -12,6 +12,11 @@ import { Component } from '@angular/core';
         <li><a href="" [routerLink]="['/performance']">Performance</a></li>
       </ul>
     </nav>
+
+    <button md-raised-button>
+      Angular Material works!
+      <md-icon>done</md-icon>
+    </button>
     <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.scss']
