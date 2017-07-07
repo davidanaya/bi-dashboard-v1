@@ -8,10 +8,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class PerformanceGuard implements CanActivate {
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): Observable<boolean> | Promise<boolean> | boolean {
+  canActivate(): boolean {
     return true;
   }
 }

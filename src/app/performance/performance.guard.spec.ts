@@ -9,7 +9,7 @@ describe('PerformanceGuard', () => {
     });
   });
 
-  it('should ...', inject([PerformanceGuard], (guard: PerformanceGuard) => {
-    expect(guard).toBeTruthy();
+  it('should return true', inject([PerformanceGuard], (guard: PerformanceGuard) => {
+    expect(guard.canActivate()).toBeTruthy();
   }));
 });
