@@ -7,19 +7,12 @@ import 'rxjs/add/operator/pluck';
 @Component({
   selector: 'app-performance',
   template: `
-    <p>performance dashboards</p>
-    <ul>
-      <li *ngFor="let dashboard of (dashboards$ | async)">
-        {{ dashboard.name }}
-      </li>
-    </ul>
+    <h2>Performance</h2>
   `,
   styleUrls: ['./performance.component.scss']
 })
 export class PerformanceComponent implements OnInit {
-  dashboards$: Observable<any> = this.route.data.pluck('layout');
-
-  constructor(private route: ActivatedRoute) {}
+  constructor() {}
 
   ngOnInit() {}
 }

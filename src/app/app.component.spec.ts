@@ -25,11 +25,11 @@ describe('AppComponent', () => {
   );
 
   it(
-    `should have as title 'my-angular-cli-seed'`,
+    `should have as title 'Executive Dashboard'`,
     async(() => {
       const fixture = TestBed.createComponent(AppComponent);
       const app = fixture.debugElement.componentInstance;
-      expect(app.title).toEqual('my-angular-cli-seed');
+      expect(app.title).toEqual('Executive Dashboard');
     })
   );
 
@@ -40,8 +40,17 @@ describe('AppComponent', () => {
       fixture.detectChanges();
       const compiled = fixture.debugElement.nativeElement;
       expect(compiled.querySelector('h1').textContent).toContain(
-        'Welcome to my-angular-cli-seed!!'
+        'Executive Dashboard'
       );
+    })
+  );
+
+  it(
+    'should display a navigation menu',
+    async(() => {
+      const fixture = TestBed.createComponent(AppComponent);
+      const app = fixture.debugElement.componentInstance;
+      expect(app.nav.length).toBeTruthy();
     })
   );
 });

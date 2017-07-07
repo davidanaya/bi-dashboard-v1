@@ -10,11 +10,10 @@ import { PerformanceComponent } from './performance.component';
 // providers
 import { PerformanceGuard } from 'app/performance/performance.guard';
 import { PerformanceService } from 'app/performance/services/performance.service';
-import { PerformanceResolve } from 'app/performance/performance.resolve';
 
 @NgModule({
   imports: [CommonModule, PerformanceRoutingModule],
   declarations: [PerformanceComponent, DashboardComponent],
-  providers: [PerformanceGuard, PerformanceService, PerformanceResolve]
+  providers: [PerformanceGuard, PerformanceService]
 })
 export class PerformanceModule {}

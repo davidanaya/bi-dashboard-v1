@@ -1,26 +1,39 @@
 import { Component } from '@angular/core';
 
+interface Nav {
+  link: string;
+  name: string;
+  exact: boolean;
+}
+
 @Component({
   selector: 'app-root',
   template: `
-    <h1>
-      Welcome to {{title}}!!
-    </h1>
-    <nav>
-      <ul>
-        <li><a href="" [routerLink]="['/home']">Home</a></li>
-        <li><a href="" [routerLink]="['/performance']">Performance</a></li>
-      </ul>
+    <h1>{{ title }}</h1>
+    <nav class="navigation">
+      <a *ngFor="let item of nav"
+        [routerLink]="item.link"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: item.exact }">
+        &nbsp;{{ item.name}}&nbsp;
+      </a>
     </nav>
-
-    <button md-raised-button>
-      Angular Material works!
-      <md-icon>done</md-icon>
-    </button>
     <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-angular-cli-seed';
+  title = 'Executive Dashboard';
+  nav: Nav[] = [
+    {
+      link: '/home',
+      name: 'Home',
+      exact: false
+    },
+    {
+      link: '/performance',
+      name: 'Performance',
+      exact: false
+    }
+  ];
 }

@@ -1,14 +1,14 @@
 import { MyAngularCliSeedPage } from './app.po';
 
-describe('my-angular-cli-seed App', () => {
+describe('executive dashboard', () => {
   let page: MyAngularCliSeedPage;
 
   beforeEach(() => {
     page = new MyAngularCliSeedPage();
   });
 
-  it('should display welcome message', () => {
+  it(`should display title 'Executive Dashboard'`, () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to my-angular-cli-seed!!');
+    expect(page.getParagraphText()).toEqual('Executive Dashboard');
   });
 });
