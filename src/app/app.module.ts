@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
+import { MaterialModule } from '@angular/material';
+
 // modules
 import { AppRoutingModule } from './app-routing.module';
 import { PerformanceModule } from 'app/performance/performance.module';
@@ -19,6 +21,7 @@ import { HomeComponent } from 'app/components/home/home.component';
   imports: [
     BrowserModule,
     HttpModule,
+    MaterialModule,
     AppRoutingModule,
     PerformanceModule
   ],
