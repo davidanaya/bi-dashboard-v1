@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
+  selector: 'cp-home',
   template: `
     <h2>Home page</h2>
     <p>This is the home page for the Executive Dashboard and should contain links to all sections</p>

@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
-import { PERFORMANCE_MOCK } from './performance.mock';
+import { FINANCE_MOCK } from './finance.mock';
 
 @Injectable()
-export class PerformanceService {
+export class FinanceService {
   constructor() {}
 
   getData(): Observable<any> {
-    return Observable.of(PERFORMANCE_MOCK);
+    return Observable.of(FINANCE_MOCK);
   }
 }

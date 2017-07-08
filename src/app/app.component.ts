@@ -34,6 +34,11 @@ export class AppComponent {
       link: '/performance',
       name: 'Performance',
       exact: false
+    },
+    {
+      link: '/finance',
+      name: 'Finance',
+      exact: false
     }
   ];
 }

@@ -1,10 +1,10 @@
-import { MyAngularCliSeedPage } from './app.po';
+import { ExecutiveDashboardPage } from './app.po';
 
 describe('executive dashboard', () => {
-  let page: MyAngularCliSeedPage;
+  let page: ExecutiveDashboardPage;
 
   beforeEach(() => {
-    page = new MyAngularCliSeedPage();
+    page = new ExecutiveDashboardPage();
   });
 
   it(`should display title 'Executive Dashboard'`, () => {

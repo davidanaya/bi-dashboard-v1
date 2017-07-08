@@ -4,16 +4,15 @@ import { CommonModule } from '@angular/common';
 import { PerformanceRoutingModule } from './performance-routing.module';
 
 // components
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { PerformanceComponent } from './performance.component';
+import { PerformanceDashboardComponent } from './components/performance-dashboard/performance-dashboard.component';
 
 // providers
-import { PerformanceGuard } from 'app/performance/performance.guard';
-import { PerformanceService } from 'app/performance/services/performance.service';
+import { PerformanceGuard } from './performance.guard';
+import { PerformanceService } from './services/performance.service';
 
 @NgModule({
   imports: [CommonModule, PerformanceRoutingModule],
-  declarations: [PerformanceComponent, DashboardComponent],
+  declarations: [PerformanceDashboardComponent],
   providers: [PerformanceGuard, PerformanceService]
 })
 export class PerformanceModule {}

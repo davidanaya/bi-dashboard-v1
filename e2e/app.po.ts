@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class MyAngularCliSeedPage {
+export class ExecutiveDashboardPage {
   navigateTo() {
     return browser.get('/');
   }
