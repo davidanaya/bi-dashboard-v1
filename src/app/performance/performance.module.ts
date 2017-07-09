@@ -8,11 +8,10 @@ import { PerformanceDashboardComponent } from './components/performance-dashboar
 
 // providers
 import { PerformanceGuard } from './performance.guard';
-import { PerformanceService } from './services/performance.service';
 
 @NgModule({
   imports: [CommonModule, PerformanceRoutingModule],
   declarations: [PerformanceDashboardComponent],
-  providers: [PerformanceGuard, PerformanceService]
+  providers: [PerformanceGuard]
 })
 export class PerformanceModule {}

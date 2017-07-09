@@ -1,7 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { StoreModule } from '@ngrx/store';
+
 import { FinanceDashboardComponent } from './finance-dashboard.component';
-import { FinanceService } from 'app/finance/services/finance.service';
+import { FinanceService } from 'app/services/finance.service';
 
 describe('FinanceDashboardComponent', () => {
   let component: FinanceDashboardComponent;
@@ -10,6 +12,7 @@ describe('FinanceDashboardComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
+        imports: [StoreModule.provideStore({})],
         declarations: [FinanceDashboardComponent],
         providers: [FinanceService]
       }).compileComponents();

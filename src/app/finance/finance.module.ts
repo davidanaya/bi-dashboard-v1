@@ -8,11 +8,10 @@ import { FinanceDashboardComponent } from './components/finance-dashboard/financ
 
 // providers
 import { FinanceGuard } from 'app/finance/finance.guard';
-import { FinanceService } from 'app/finance/services/finance.service';
 
 @NgModule({
   imports: [CommonModule, FinanceRoutingModule],
   declarations: [FinanceDashboardComponent],
-  providers: [FinanceGuard, FinanceService]
+  providers: [FinanceGuard]
 })
 export class FinanceModule {}

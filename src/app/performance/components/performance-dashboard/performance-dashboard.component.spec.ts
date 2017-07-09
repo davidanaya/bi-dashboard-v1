@@ -1,7 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { StoreModule } from '@ngrx/store';
+
 import { PerformanceDashboardComponent } from './performance-dashboard.component';
-import { PerformanceService } from 'app/performance/services/performance.service';
+import { PerformanceService } from 'app/services/performance.service';
 
 describe('PerformanceDashboardComponent', () => {
   let component: PerformanceDashboardComponent;
@@ -10,6 +12,7 @@ describe('PerformanceDashboardComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
+        imports: [StoreModule.provideStore({})],
         declarations: [PerformanceDashboardComponent],
         providers: [PerformanceService]
       }).compileComponents();
