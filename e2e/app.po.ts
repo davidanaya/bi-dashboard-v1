@@ -6,6 +6,6 @@ export class ExecutiveDashboardPage {
   }
 
   getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+    return element(by.css('cp-app h3')).getText();
   }
 }

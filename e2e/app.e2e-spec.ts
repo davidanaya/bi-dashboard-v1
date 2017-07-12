@@ -1,14 +1,14 @@
 import { ExecutiveDashboardPage } from './app.po';
 
-describe('executive dashboard', () => {
+describe('home page', () => {
   let page: ExecutiveDashboardPage;
 
   beforeEach(() => {
     page = new ExecutiveDashboardPage();
   });
 
-  it(`should display title 'Executive Dashboard'`, () => {
+  it(`should display title 'Home Page'`, () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Executive Dashboard');
+    expect(page.getParagraphText()).toEqual('Home Page');
   });
 });
