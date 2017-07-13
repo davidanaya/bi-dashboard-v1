@@ -11,7 +11,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // state
 import { INITIAL_STATE } from 'app/state-management/state';
-import { storeReducer } from 'app/state-management/reducers';
+import { storeReducer } from 'app/state-management/reducers/store-reducer';
 
 // modules
 import { AppRoutingModule } from './app-routing.module';
