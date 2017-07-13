@@ -10,7 +10,7 @@ import { PerformanceService } from 'app/services/performance.service';
 import {
   LOAD_OPCOS_ACTION,
   OpcosLoadedAction
-} from 'app/state-management/actions';
+} from 'app/state-management/actions/performance';
 
 @Injectable()
 export class LoadOpcosEffectService {
