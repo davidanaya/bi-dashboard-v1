@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from 'app/components/home/home.component';
-import { PageComponent } from 'app/components/page/page.component';
-import { HomeResolve } from 'app/components/home/home.resolve';
-import { PageResolve } from 'app/components/page/page.resolve';
+import { HomeComponent } from 'app/containers/home/home.component';
+import { PageComponent } from 'app/containers/page/page.component';
+import { HomeResolve } from 'app/containers/home/home.resolve';
+import { PageResolve } from 'app/containers/page/page.resolve';
 
 const routes: Routes = [
   {

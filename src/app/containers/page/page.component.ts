@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap';
 
-import { PageResolve } from 'app/components/page/page.resolve';
+import { PageResolve } from 'app/containers/page/page.resolve';
 import { DashboardComponent } from 'app/components/dashboard/dashboard.component';
 import { SectionComponent } from 'app/components/section/section.component';
 
