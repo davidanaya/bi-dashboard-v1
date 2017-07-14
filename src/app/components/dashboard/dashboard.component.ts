@@ -10,7 +10,6 @@ import { Component, OnInit, Input } from '@angular/core';
     <div *ngFor="let widget of data.widgets">
       <cp-widget [type]="widget"></cp-widget>
     </div>
-    <!--pre>{{ data | json }}</pre-->
   `,
   styleUrls: ['./dashboard.component.scss']
 })
@@ -26,5 +25,4 @@ export class DashboardComponent implements OnInit {
   get parent() {
     return this.data ? `/${this.data.parent}` : '';
   }
-
 }

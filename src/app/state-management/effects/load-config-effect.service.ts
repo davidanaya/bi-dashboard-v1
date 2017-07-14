@@ -17,9 +17,9 @@ export class LoadConfigEffectService {
   @Effect()
   config$: Observable<Action> = this.actions$
     .ofType(LOAD_CONFIG_ACTION)
-    .do(() => console.log('LoadConfigEffectService'))
     .switchMap(() => this.service.getData())
     .map(config => new ConfigLoadedAction(config));
 
-  constructor(private actions$: Actions, private service: ConfigService) {}
+  constructor(private actions$: Actions, private service: ConfigService) {
+  }
 }

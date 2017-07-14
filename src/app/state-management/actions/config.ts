@@ -10,7 +10,5 @@ export class LoadConfigAction {
 export class ConfigLoadedAction implements Action {
   type = CONFIG_LOADED_ACTION;
 
-  constructor(public payload?: any) {
-    console.log('ConfigLoadedAction');
-  }
+  constructor(public payload?: any) {}
 }

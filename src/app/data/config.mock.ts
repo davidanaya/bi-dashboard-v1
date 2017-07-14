@@ -54,6 +54,7 @@ export const CONFIG_MOCK = {
     }
   ],
   widgets: {
-    bars: 'barWidget'
+    bars: {},
+    doughnut: {}
   }
 };

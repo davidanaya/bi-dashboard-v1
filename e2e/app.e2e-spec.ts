@@ -1,14 +1,14 @@
-import { ExecutiveDashboardPage } from './app.po';
+import { BiDashboard } from './app.po';
 
 describe('home page', () => {
-  let page: ExecutiveDashboardPage;
+  let page: BiDashboard;
 
   beforeEach(() => {
-    page = new ExecutiveDashboardPage();
+    page = new BiDashboard();
   });
 
-  it(`should display title 'Home Page'`, () => {
+  it(`should display title 'BI Dashboard'`, () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Home Page');
+    expect(page.getParagraphText()).toEqual('BI Dashboard');
   });
 });

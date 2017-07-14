@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from 'app/containers/home/home.component';
 import { PageComponent } from 'app/containers/page/page.component';
-import { HomeResolve } from 'app/containers/home/home.resolve';
 import { PageResolve } from 'app/containers/page/page.resolve';
 
 const routes: Routes = [
@@ -14,10 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent,
-    resolve: {
-      navigation: HomeResolve
-    }
+    component: HomeComponent
   },
   {
     path: '**',

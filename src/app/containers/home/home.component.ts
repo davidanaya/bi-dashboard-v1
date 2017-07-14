@@ -4,6 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/take';
 
+import { Store } from '@ngrx/store';
+import { AppState } from 'app/state-management/state';
+import { LoadConfigAction } from 'app/state-management/actions/config';
+
 @Component({
   selector: 'cp-home',
   template: `
@@ -17,11 +21,12 @@ import 'rxjs/add/operator/take';
 export class HomeComponent implements OnInit {
   sections: any;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private store: Store<AppState>) {}
 
   ngOnInit() {
-    this.route.data
-      .take(1)
-      .subscribe(data => (this.sections = data.navigation));
+    this.store
+      .select('configuration')
+      .map((data: any) => data.pages.filter(page => page.parent === 'home'))
+      .subscribe(sections => (this.sections = sections));
   }
 }
