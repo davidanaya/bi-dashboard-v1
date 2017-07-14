@@ -22,7 +22,8 @@ export const CONFIG_MOCK = {
       id: 'performance/executive-dashboard',
       order: 1,
       type: 'dashboard',
-      parent: 'performance'
+      parent: 'performance',
+      widgets: ['bar']
     },
     {
       title: 'Overview Dashboard',
@@ -30,7 +31,8 @@ export const CONFIG_MOCK = {
       id: 'performance/overview-dashboard',
       order: 2,
       type: 'dashboard',
-      parent: 'performance'
+      parent: 'performance',
+      widgets: ['doughnut']
     },
     {
       title: 'Executive Dashboard',
@@ -38,7 +40,8 @@ export const CONFIG_MOCK = {
       id: 'edp/executive-dashboard',
       order: 1,
       type: 'dashboard',
-      parent: 'edp'
+      parent: 'edp',
+      widgets: ['bar', 'doughnut']
     },
     {
       title: 'Overview Dashboard',
@@ -46,7 +49,11 @@ export const CONFIG_MOCK = {
       id: 'edp/overview-dashboard',
       order: 2,
       type: 'dashboard',
-      parent: 'edp'
+      parent: 'edp',
+      widgets: ['doughnut', 'bar']
     }
-  ]
+  ],
+  widgets: {
+    bars: 'barWidget'
+  }
 };

@@ -7,7 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
     <nav class="navigation">
       <a [routerLink]="parent">← Back</a>
     </nav>
-    <pre>{{ data | json }}</pre>
+    <div *ngFor="let widget of data.widgets">
+      <cp-widget [type]="widget"></cp-widget>
+    </div>
+    <!--pre>{{ data | json }}</pre-->
   `,
   styleUrls: ['./dashboard.component.scss']
 })

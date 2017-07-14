@@ -19,11 +19,15 @@ import { SharedModule } from 'app/shared/shared.module';
 
 // components
 import { AppComponent } from './app.component';
-import { HomeComponent } from 'app/components/home/home.component';
+import { HomeComponent } from 'app/containers/home/home.component';
 import {
   PageComponent,
   PageComponents
-} from './components/page/page.component';
+} from './containers/page/page.component';
+import {
+  WidgetComponent,
+  WidgetComponents
+} from './containers/widget/widget.component';
 
 // services
 import { FinanceService } from 'app/services/finance.service';
@@ -35,16 +39,22 @@ import { SectionComponent } from './components/section/section.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 // routing
-import { HomeResolve } from 'app/components/home/home.resolve';
-import { PageResolve } from 'app/components/page/page.resolve';
+import { HomeResolve } from 'app/containers/home/home.resolve';
+import { PageResolve } from 'app/containers/page/page.resolve';
 import { CustomReuseStrategy } from 'app/router.reuse.strategy';
+import { DoughnutWidgetComponent } from './components/doughnut-widget/doughnut-widget.component';
+import { BarWidgetComponent } from './components/bar-widget/bar-widget.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PageComponent,
-    ...PageComponents
+    ...PageComponents,
+    ...WidgetComponents,
+    DoughnutWidgetComponent,
+    BarWidgetComponent,
+    WidgetComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +78,7 @@ import { CustomReuseStrategy } from 'app/router.reuse.strategy';
       useClass: CustomReuseStrategy
     }
   ],
-  entryComponents: [...PageComponents],
+  entryComponents: [...PageComponents, ...WidgetComponents],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
