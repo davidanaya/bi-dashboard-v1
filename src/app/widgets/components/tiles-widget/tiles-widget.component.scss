@@ -1,0 +1,37 @@
+.tiles {
+  display: flex;
+  flex-wrap: wrap;
+
+  $gutter: 2rem;
+  margin-bottom: 3rem;
+
+  &__item {
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__content {
+    padding: 2em ($gutter / 2) ($gutter / 2);
+    position: relative;
+  }
+
+  &__icon {
+    opacity: 0.5;
+    position: absolute;
+    right: $gutter / 2;
+    top: $gutter / 2;
+    font-size: 3em;
+  }
+
+  &__title {
+    font-size: 1.8em;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  &__subtitle{
+    font-size: 1.2em;
+    font-weight: 200;
+  }
+}

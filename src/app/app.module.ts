@@ -17,6 +17,7 @@ import { storeReducer } from 'app/state-management/reducers/store-reducer';
 // modules
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from 'app/shared/shared.module';
+import { WidgetsModule } from 'app/widgets/widgets.module';
 
 // components
 import { AppComponent } from './app.component';
@@ -25,10 +26,7 @@ import {
   PageComponent,
   PageComponents
 } from './containers/page/page.component';
-import {
-  WidgetComponent,
-  WidgetComponents
-} from './containers/widget/widget.component';
+import { ConfigPaneComponent } from './containers/config-pane/config-pane.component';
 
 // services
 import { FinanceService } from 'app/services/finance.service';
@@ -43,9 +41,6 @@ import { LoadConfigEffectService } from 'app/state-management/effects/load-confi
 // routing
 import { PageResolve } from 'app/containers/page/page.resolve';
 import { CustomReuseStrategy } from 'app/router.reuse.strategy';
-import { DoughnutWidgetComponent } from './components/doughnut-widget/doughnut-widget.component';
-import { BarWidgetComponent } from './components/bar-widget/bar-widget.component';
-import { ConfigPaneComponent } from './containers/config-pane/config-pane.component';
 
 @NgModule({
   declarations: [
@@ -53,11 +48,7 @@ import { ConfigPaneComponent } from './containers/config-pane/config-pane.compon
     HomeComponent,
     PageComponent,
     ...PageComponents,
-    ...WidgetComponents,
-    DoughnutWidgetComponent,
-    BarWidgetComponent,
-    WidgetComponent,
-    ConfigPaneComponent
+    ConfigPaneComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +62,8 @@ import { ConfigPaneComponent } from './containers/config-pane/config-pane.compon
     EffectsModule.run(LoadConfigEffectService),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    WidgetsModule,
   ],
   providers: [
     ConfigService,
@@ -83,7 +75,7 @@ import { ConfigPaneComponent } from './containers/config-pane/config-pane.compon
       useClass: CustomReuseStrategy
     }
   ],
-  entryComponents: [...PageComponents, ...WidgetComponents],
+  entryComponents: [...PageComponents],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
