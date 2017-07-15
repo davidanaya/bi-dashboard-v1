@@ -7,8 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
     <nav class="navigation">
       <a [routerLink]="parent">← Back</a>
     </nav>
-    <div *ngFor="let widget of data.widgets">
-      <cp-widget [type]="widget"></cp-widget>
+    <div class="widgets-container {{ data?.layout }}">
+      <cp-widget *ngFor="let widget of data.widgets" [type]="widget"></cp-widget>
     </div>
   `,
   styleUrls: ['./dashboard.component.scss']
