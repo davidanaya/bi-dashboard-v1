@@ -24,7 +24,7 @@ export const CONFIG_MOCK = {
       type: 'dashboard',
       layout: 'column',
       parent: 'performance',
-      widgets: ['bar']
+      widgets: ['bar', 'tiles', 'table']
     },
     {
       title: 'Overview Dashboard',
@@ -34,7 +34,7 @@ export const CONFIG_MOCK = {
       type: 'dashboard',
       layout: 'column',
       parent: 'performance',
-      widgets: ['doughnut']
+      widgets: ['doughnut', 'table']
     },
     {
       title: 'Executive Dashboard',
@@ -59,6 +59,8 @@ export const CONFIG_MOCK = {
   ],
   widgets: {
     bars: {},
-    doughnut: {}
+    doughnut: {},
+    tiles: {},
+    table: {}
   }
 };

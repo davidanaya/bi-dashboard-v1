@@ -1,0 +1,26 @@
+$gray: #7b7b7b;
+$gray-light: #96a3ad;
+$gray-lighter: #f3f3f3;
+$lime: #c7d663;
+$green: #008000;
+$green-light: #00ce79;
+$turquoise: #34b2ad;
+$sky-blue: #1cc6d3;
+$dark-blue: #5583a4;
+$purple: #ac549c;
+$red: #e65e66;
+$pink: #e65f8d;
+$orange: #f6ba55;
+$black: #484848;
+
+$colors: "lime" $lime, "green-light" $green-light, "green" $green,
+  "turquoise" $turquoise, "sky-blue" $sky-blue, "dark-blue" $dark-blue,
+  "purple" $purple, "red" $red, "pink" $pink, "orange" $orange, "black" $black,
+  "gray" $gray, "gray-light" $gray-light, "gray-lighter" $gray-lighter;
+
+@each $color in $colors {
+  .bg-#{nth($color, 1)} {
+    background-color: nth($color, 2);
+    color: white;
+  }
+}
