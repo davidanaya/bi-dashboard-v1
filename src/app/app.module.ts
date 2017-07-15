@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { MaterialModule } from '@angular/material';
@@ -63,6 +63,7 @@ import { ConfigPaneComponent } from './containers/config-pane/config-pane.compon
     BrowserModule,
     HttpModule,
     ReactiveFormsModule,
+    FormsModule,
     MaterialModule,
     StoreModule.provideStore(storeReducer),
     EffectsModule.run(LoadFinanceEffectService),
