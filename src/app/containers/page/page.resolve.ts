@@ -9,9 +9,9 @@ import {
 import 'rxjs/add/operator/map';
 
 import { Store } from '@ngrx/store';
-import { AppState } from 'app/state-management/state';
+import { AppState } from 'app/state/state';
 
-import { LoadConfigAction } from 'app/state-management/actions/config';
+import { LoadConfigAction } from 'app/state/actions/config';
 
 @Injectable()
 export class PageResolve implements Resolve<any> {

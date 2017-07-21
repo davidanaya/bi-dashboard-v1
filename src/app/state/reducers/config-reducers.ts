@@ -1,5 +1,5 @@
-import { AppState } from 'app/state-management/state';
-import { ConfigLoadedAction } from 'app/state-management/actions/config';
+import { AppState } from 'app/state/state';
+import { ConfigLoadedAction } from 'app/state/actions/config';
 
 export function handleConfigLoadedAction(
   state: AppState,

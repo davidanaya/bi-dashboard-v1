@@ -10,7 +10,7 @@ import { ConfigService } from 'app/services/config.service';
 import {
   ConfigLoadedAction,
   LOAD_CONFIG_ACTION
-} from 'app/state-management/actions/config';
+} from 'app/state/actions/config';
 
 @Injectable()
 export class LoadConfigEffectService {

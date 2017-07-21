@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { Store } from '@ngrx/store';
-import { AppState } from 'app/state-management/state';
+import { AppState } from 'app/state/state';
 
-import { ConfigLoadedAction } from 'app/state-management/actions/config';
+import { ConfigLoadedAction } from 'app/state/actions/config';
 
 @Component({
   selector: 'cp-config-pane',

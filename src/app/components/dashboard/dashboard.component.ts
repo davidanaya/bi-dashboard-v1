@@ -1,7 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  ChangeDetectionStrategy
+} from '@angular/core';
 
 @Component({
   selector: 'cp-dashboard',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <h3>{{ data?.title }}</h3>
     <nav class="navigation">

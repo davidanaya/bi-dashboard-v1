@@ -19,7 +19,7 @@ const DATA = {
   },
   details: [
     {
-      name: 'ADCO',
+      name: 'Company1',
       values: {
         'Actual Wells': 34,
         'Planned Wells': 39,
@@ -28,7 +28,7 @@ const DATA = {
       }
     },
     {
-      name: 'ADMA-OPCO',
+      name: 'Company2',
       values: {
         'Actual Wells': 5,
         'Planned Wells': 7,
@@ -37,7 +37,7 @@ const DATA = {
       }
     },
     {
-      name: 'ZADCO',
+      name: 'Company3',
       values: {
         'Actual Wells': 2,
         'Planned Wells': 4,

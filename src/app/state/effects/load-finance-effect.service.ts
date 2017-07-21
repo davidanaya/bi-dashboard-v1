@@ -8,7 +8,7 @@ import { FinanceService } from 'app/services/finance.service';
 import {
   LOAD_FINANCE_KPIS_ACTION,
   FinanceKpisLoadedAction
-} from 'app/state-management/actions/finance';
+} from 'app/state/actions/finance';
 import { Action } from '@ngrx/store';
 
 @Injectable()
