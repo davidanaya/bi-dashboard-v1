@@ -1,5 +1,5 @@
-import { AppState } from 'app/state-management/state';
-import { OpcosLoadedAction } from 'app/state-management/actions/performance';
+import { AppState } from 'app/state/state';
+import { OpcosLoadedAction } from 'app/state/actions/performance';
 
 export function handleOpcosLoadedAction(
   state: AppState,

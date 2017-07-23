@@ -1,5 +1,5 @@
-import { AppState } from 'app/state-management/state';
-import { FinanceKpisLoadedAction } from 'app/state-management/actions/finance';
+import { AppState } from 'app/state/state';
+import { FinanceKpisLoadedAction } from 'app/state/actions/finance';
 
 export function handleFinanceKpisLoadedAction(
   state: AppState,

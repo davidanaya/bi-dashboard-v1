@@ -15,7 +15,7 @@ import { DashboardComponent } from 'app/components/dashboard/dashboard.component
 import { SectionComponent } from 'app/components/section/section.component';
 
 import { Store } from '@ngrx/store';
-import { AppState } from 'app/state-management/state';
+import { AppState } from 'app/state/state';
 
 export const PageComponents = [SectionComponent, DashboardComponent];
 
