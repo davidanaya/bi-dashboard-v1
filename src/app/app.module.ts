@@ -30,14 +30,9 @@ import { ConfigPaneComponent } from './containers/config-pane/config-pane.compon
 import { HomeComponent } from 'app/components/home/home.component';
 import { AppComponent } from './app.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
-import { AppNavComponent } from './components/app-nav/app-nav.component';
+import { AppNavComponent } from './containers/app-nav/app-nav.component';
 
 // services
-import { FinanceService } from 'app/services/finance.service';
-import { LoadFinanceEffectService } from 'app/state/effects/load-finance-effect.service';
-import { PerformanceService } from 'app/services/performance.service';
-import { LoadOpcosEffectService } from 'app/state/effects/load-opcos-effect.service';
-import { ConfigService } from 'app/services/config.service';
 import { SectionComponent } from './components/section/section.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoadConfigEffectService } from 'app/state/effects/load-config-effect.service';
@@ -87,19 +82,14 @@ const routes: Routes = [
     FormsModule,
     MaterialModule,
     StoreModule.provideStore(storeReducer),
-    EffectsModule.run(LoadFinanceEffectService),
-    EffectsModule.run(LoadOpcosEffectService),
     EffectsModule.run(LoadConfigEffectService),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     AuthModule,
     RouterModule.forRoot(routes),
-    SharedModule,
+    SharedModule.forRoot(),
     WidgetsModule
   ],
   providers: [
-    ConfigService,
-    FinanceService,
-    PerformanceService,
     PageResolve,
     {
       provide: RouteReuseStrategy,

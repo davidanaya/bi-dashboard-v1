@@ -5,13 +5,9 @@ import { User } from 'app/auth/shared/services/auth.service';
 export interface AppState {
   user: User;
   configuration: any;
-  financeKpis: FinanceKpi[];
-  opcos: Opco[];
 }
 
 export const INITIAL_STATE: AppState = {
   user: undefined,
-  configuration: {},
-  financeKpis: [],
-  opcos: []
+  configuration: {}
 };

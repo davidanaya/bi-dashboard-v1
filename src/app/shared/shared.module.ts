@@ -1,9 +1,19 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+import { ConfigService } from 'app/shared/services/config.service';
+
 @NgModule({
-  imports: [CommonModule],
-  declarations: [],
-  exports: []
+  imports: [CommonModule, AngularFireDatabaseModule],
+  declarations: []
 })
-export class SharedModule {}
+export class SharedModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: SharedModule,
+      providers: [ConfigService]
+    };
+  }
+}
