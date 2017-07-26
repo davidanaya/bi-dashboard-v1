@@ -7,15 +7,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { Store } from '@ngrx/store';
 import { AppState } from 'app/state/state';
 
-import { LoadConfigAction } from 'app/state/actions/config';
 import { AuthService, User } from 'app/auth/shared/services/auth.service';
-import { ConfigService } from 'app/shared/services/config.service';
-
-interface Nav {
-  link: string;
-  name: string;
-  exact: boolean;
-}
 
 @Component({
   selector: 'cp-app',

@@ -24,7 +24,7 @@ export class AppNavComponent implements OnInit {
 
   ngOnInit() {
     this.store
-      .select('configuration')
+      .select('config')
       .map((data: any) => data.pages.filter(page => page.parent === 'home'))
       .map(sections => (this.sections = sections));
 

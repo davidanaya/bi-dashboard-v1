@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
+import { FirebaseObjectObservable } from 'angularfire2/database';
+
 import { Store } from '@ngrx/store';
 import { AppState } from 'app/state/state';
 
@@ -35,9 +37,9 @@ export class ConfigPaneComponent implements OnInit {
   }
 
   private loadData() {
-    this.store.select('configuration').subscribe(config => {
+    this.store.select('config').subscribe(config => {
       this.data = config;
-      this.form.get('config').setValue(JSON.stringify(this.data, undefined, 2));
+      this.form.get('config').setValue(JSON.stringify(config, undefined, 2));
     });
   }
 

@@ -10,9 +10,9 @@ import { ActivatedRoute, UrlSegment } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap';
 
-import { PageResolve } from 'app/containers/page/page.resolve';
-import { DashboardComponent } from 'app/components/dashboard/dashboard.component';
-import { SectionComponent } from 'app/components/section/section.component';
+import { PageResolve } from './page.resolve';
+import { DashboardComponent } from '../../components/dashboard/dashboard.component';
+import { SectionComponent } from '../../components/section/section.component';
 
 import { Store } from '@ngrx/store';
 import { AppState } from 'app/state/state';
@@ -46,17 +46,19 @@ export class PageComponent implements OnInit {
         return this.pageResolve.resolveUrlSegment(urlSegment);
       })
       .subscribe(content => {
-        const ComponentClass: any = PageComponents.find(
-          component => component.ref === content.type
-        );
-        const pageComponentFactory = this.cfResolver.resolveComponentFactory(
-          ComponentClass
-        );
-        const pageComponent = this.viewContainer.createComponent(
-          pageComponentFactory
-        );
-        pageComponent.instance['data'] = content;
-        this.subscribeToConfigurationChanges(pageComponent, content);
+        if (content) {
+          const ComponentClass: any = PageComponents.find(
+            component => component.ref === content.type
+          );
+          const pageComponentFactory = this.cfResolver.resolveComponentFactory(
+            ComponentClass
+          );
+          const pageComponent = this.viewContainer.createComponent(
+            pageComponentFactory
+          );
+          pageComponent.instance['data'] = content;
+          this.subscribeToConfigurationChanges(pageComponent, content);
+        }
       });
   }
 
@@ -66,7 +68,7 @@ export class PageComponent implements OnInit {
   ) {
     const url = content.link;
     this.store
-      .select('configuration')
+      .select('config')
       .switchMap(() => this.pageResolve.resolveUrlSegment(this.urlSegment))
       .subscribe(newContent => (pageComponent.instance['data'] = newContent));
   }
