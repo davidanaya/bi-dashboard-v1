@@ -29,6 +29,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {}
 
   get parent() {
-    return this.data ? `/${this.data.parent}` : '';
+    return this.data ? `/bi/${this.data.parent}` : '';
   }
 }

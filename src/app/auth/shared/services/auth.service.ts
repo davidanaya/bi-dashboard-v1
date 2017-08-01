@@ -6,12 +6,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from 'app/state/state';
 
 import { UserLoggedOutAction, UserAuthenticatedAction } from 'app/state/actions/auth';
-
-export interface User {
-  email: string;
-  uid: string;
-  authenticated: boolean;
-}
+import { User } from '../models/user.model';
 
 @Injectable()
 export class AuthService {

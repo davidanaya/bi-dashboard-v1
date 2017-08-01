@@ -1,4 +1,4 @@
-import { User } from 'app/auth/shared/services/auth.service';
+import { User } from 'app/auth/shared/models/user.model';
 
 export interface AppState {
   user: User;

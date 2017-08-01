@@ -25,8 +25,10 @@ export class AppNavComponent implements OnInit {
   ngOnInit() {
     this.store
       .select('config')
+      .filter((data: any) => data.pages)
       .map((data: any) => data.pages.filter(page => page.parent === 'home'))
-      .map(sections => (this.sections = sections));
+      .map(sections => (this.sections = sections))
+      .subscribe();
 
     this.store.dispatch(new LoadConfigAction());
   }

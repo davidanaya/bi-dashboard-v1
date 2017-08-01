@@ -7,7 +7,8 @@ import { Subscription } from 'rxjs/Subscription';
 import { Store } from '@ngrx/store';
 import { AppState } from 'app/state/state';
 
-import { AuthService, User } from 'app/auth/shared/services/auth.service';
+import { AuthService } from 'app/auth/shared/services/auth.service';
+import { User } from 'app/auth/shared/models/user.model';
 
 @Component({
   selector: 'cp-app',

@@ -29,12 +29,14 @@ import { PageResolve } from './containers/page/page.resolve';
 
 const routes: Routes = [
   {
-    path: '',
-    component: PageComponent,
-    canActivate: [AuthGuard],
-    resolve: {
-      content: PageResolve
-    }
+    path: 'bi',
+    children: [
+      {
+        path: '**',
+        component: PageComponent,
+        canActivate: [AuthGuard]
+      }
+    ]
   }
 ];
 

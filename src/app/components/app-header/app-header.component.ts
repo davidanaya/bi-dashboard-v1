@@ -6,7 +6,7 @@ import {
   ChangeDetectionStrategy
 } from '@angular/core';
 
-import { User } from '../../auth/shared/services/auth.service';
+import { User } from '../../auth/shared/models/user.model';
 
 @Component({
   selector: 'cp-app-header',

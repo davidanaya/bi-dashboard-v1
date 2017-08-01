@@ -31,9 +31,8 @@ export class PageResolve implements Resolve<any> {
 
   private buildPage(pages: any[] = [], url: string): any {
     const page = pages.find(p => p.id === url);
-    let newPage;
+    const newPage = Object.assign({}, page);
     if (this.isSection(page)) {
-      newPage = Object.assign({}, page);
       newPage.dashboards = pages.filter(p => p.parent === url);
     }
     return newPage;

@@ -33,19 +33,19 @@ import { CustomReuseStrategy } from 'app/router.reuse.strategy';
 
 const routes: Routes = [
   {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: '',
     pathMatch: 'full',
     redirectTo: 'home'
   },
   {
-    path: 'home',
-    component: HomeComponent,
-    canActivate: [AuthGuard]
-  },
-  // {
-  //   path: '**',
-  //   loadChildren: './bi/bi.module#BiModule'
-  // }
+    path: 'bi',
+    loadChildren: './bi/bi.module#BiModule'
+  }
 ];
 
 @NgModule({
@@ -58,7 +58,7 @@ const routes: Routes = [
     EffectsModule.run(LoadConfigEffectService),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     AuthModule,
-    RouterModule.forRoot(routes, { enableTracing: true }),
+    RouterModule.forRoot(routes, { enableTracing: false }),
     BiModule
   ],
   providers: [
