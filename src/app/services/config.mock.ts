@@ -3,7 +3,7 @@ export const CONFIG_MOCK = {
     {
       title: 'Performance',
       id: 'performance',
-      link: '/performance',
+      link: '/bi/performance',
       order: 1,
       type: 'section',
       parent: 'home'
@@ -11,14 +11,14 @@ export const CONFIG_MOCK = {
     {
       title: 'EDP',
       id: 'edp',
-      link: '/edp',
+      link: '/bi/edp',
       order: 2,
       type: 'section',
       parent: 'home'
     },
     {
       title: 'Executive Dashboard',
-      link: '/performance/executive-dashboard',
+      link: '/bi/performance/executive-dashboard',
       id: 'performance/executive-dashboard',
       order: 1,
       type: 'dashboard',
@@ -28,7 +28,7 @@ export const CONFIG_MOCK = {
     },
     {
       title: 'Overview Dashboard',
-      link: '/performance/overview-dashboard',
+      link: '/bi/performance/overview-dashboard',
       id: 'performance/overview-dashboard',
       order: 2,
       type: 'dashboard',
@@ -38,7 +38,7 @@ export const CONFIG_MOCK = {
     },
     {
       title: 'Executive Dashboard',
-      link: '/edp/executive-dashboard',
+      link: '/bi/edp/executive-dashboard',
       id: 'edp/executive-dashboard',
       order: 1,
       type: 'dashboard',
@@ -48,7 +48,7 @@ export const CONFIG_MOCK = {
     },
     {
       title: 'Overview Dashboard',
-      link: '/edp/overview-dashboard',
+      link: '/bi/edp/overview-dashboard',
       id: 'edp/overview-dashboard',
       order: 2,
       type: 'dashboard',

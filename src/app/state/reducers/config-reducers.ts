@@ -7,6 +7,6 @@ export function handleConfigLoadedAction(
 ): AppState {
   const config = action.payload;
   const newState: AppState = Object.assign({}, state);
-  newState.configuration = config;
+  newState.config = config;
   return newState;
 }

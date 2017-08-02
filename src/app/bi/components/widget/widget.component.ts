@@ -6,10 +6,10 @@ import {
   ComponentFactoryResolver
 } from '@angular/core';
 
-import { BarWidgetComponent } from 'app/widgets/components/bar-widget/bar-widget.component';
-import { DoughnutWidgetComponent } from 'app/widgets/components/doughnut-widget/doughnut-widget.component';
-import { TilesWidgetComponent } from 'app/widgets/components/tiles-widget/tiles-widget.component';
-import { TableWidgetComponent } from 'app/widgets/components/table-widget/table-widget.component';
+import { BarWidgetComponent } from '../bar-widget/bar-widget.component';
+import { DoughnutWidgetComponent } from '../doughnut-widget/doughnut-widget.component';
+import { TilesWidgetComponent } from '../tiles-widget/tiles-widget.component';
+import { TableWidgetComponent } from '../table-widget/table-widget.component';
 
 export const WidgetComponents = [BarWidgetComponent, DoughnutWidgetComponent, TilesWidgetComponent, TableWidgetComponent];
 

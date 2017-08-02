@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'cp-home',
@@ -7,4 +7,6 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
     <h3>Home Page</h3>
   `
 })
-export class HomeComponent {}
+export class HomeComponent implements OnInit {
+  ngOnInit() {}
+}

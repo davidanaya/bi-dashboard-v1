@@ -6,12 +6,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from 'app/state/state';
 
 import { UserLoggedOutAction, UserAuthenticatedAction } from 'app/state/actions/auth';
-
-export interface User {
-  email: string;
-  uid: string;
-  authenticated: boolean;
-}
+import { User } from '../models/user.model';
 
 @Injectable()
 export class AuthService {
@@ -29,6 +24,10 @@ export class AuthService {
   });
 
   constructor(private af: AngularFireAuth, private store: Store<AppState>) {}
+
+  get user() {
+    return this.af.auth.currentUser;
+  }
 
   get authState() {
     return this.af.authState;

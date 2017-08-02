@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Routes, RouterModule, RouteReuseStrategy } from '@angular/router';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { MaterialModule } from '@angular/material';
 
@@ -15,58 +14,40 @@ import { INITIAL_STATE } from 'app/state/state';
 import { storeReducer } from 'app/state/reducers/store-reducer';
 
 // modules
-import { SharedModule } from 'app/shared/shared.module';
-import { WidgetsModule } from 'app/widgets/widgets.module';
 import { AuthModule } from 'app/auth/auth.module';
-
-// containers
-import {
-  PageComponent,
-  PageComponents
-} from './containers/page/page.component';
-import { ConfigPaneComponent } from './containers/config-pane/config-pane.component';
 
 // components
 import { HomeComponent } from 'app/components/home/home.component';
-import { AppComponent } from './app.component';
-import { AppHeaderComponent } from './components/app-header/app-header.component';
-import { AppNavComponent } from './components/app-nav/app-nav.component';
+import { AppComponent } from 'app/app.component';
+import { AppHeaderComponent } from 'app/components/app-header/app-header.component';
+import { AppNavComponent } from 'app/containers/app-nav/app-nav.component';
+import { ConfigPaneComponent } from 'app/containers/config-pane/config-pane.component';
 
 // services
-import { FinanceService } from 'app/services/finance.service';
-import { LoadFinanceEffectService } from 'app/state/effects/load-finance-effect.service';
-import { PerformanceService } from 'app/services/performance.service';
-import { LoadOpcosEffectService } from 'app/state/effects/load-opcos-effect.service';
-import { ConfigService } from 'app/services/config.service';
-import { SectionComponent } from './components/section/section.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoadConfigEffectService } from 'app/state/effects/load-config-effect.service';
+import { UpdateConfigEffectService } from 'app/state/effects/update-config-effect.service';
+import { ConfigService } from 'app/services/config.service';
 
 // guards
 import { AuthGuard } from 'app/auth/shared/guards/auth.guard';
 
 // routing
-import { PageResolve } from 'app/containers/page/page.resolve';
 import { CustomReuseStrategy } from 'app/router.reuse.strategy';
 
 const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'home'
-  },
   {
     path: 'home',
     component: HomeComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: '**',
-    component: PageComponent,
-    canActivate: [AuthGuard],
-    resolve: {
-      content: PageResolve
-    }
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home'
+  },
+  {
+    path: 'bi',
+    loadChildren: './bi/bi.module#BiModule'
   }
 ];
 
@@ -74,39 +55,29 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    PageComponent,
-    ...PageComponents,
-    ConfigPaneComponent,
     AppHeaderComponent,
+    ConfigPaneComponent,
     AppNavComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule,
     ReactiveFormsModule,
     FormsModule,
     MaterialModule,
     StoreModule.provideStore(storeReducer),
-    EffectsModule.run(LoadFinanceEffectService),
-    EffectsModule.run(LoadOpcosEffectService),
     EffectsModule.run(LoadConfigEffectService),
+    EffectsModule.run(UpdateConfigEffectService),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     AuthModule,
-    RouterModule.forRoot(routes),
-    SharedModule,
-    WidgetsModule
+    RouterModule.forRoot(routes, { enableTracing: false })
   ],
   providers: [
     ConfigService,
-    FinanceService,
-    PerformanceService,
-    PageResolve,
     {
       provide: RouteReuseStrategy,
       useClass: CustomReuseStrategy
     }
   ],
-  entryComponents: [...PageComponents],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
