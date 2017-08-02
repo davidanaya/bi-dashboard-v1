@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { Store } from '@ngrx/store';
 import { AppState } from 'app/state/state';
 import { LoadConfigAction } from 'app/state/actions/config';
+import { Config, Page } from 'app/models/config.model';
 
 @Component({
   selector: 'cp-app-nav',
@@ -18,16 +19,16 @@ import { LoadConfigAction } from 'app/state/actions/config';
   styleUrls: ['./app-nav.component.scss']
 })
 export class AppNavComponent implements OnInit {
-  sections: any;
+  sections: Page[];
 
   constructor(private store: Store<AppState>) {}
 
   ngOnInit() {
     this.store
       .select('config')
-      .filter((data: any) => data.pages)
-      .map((data: any) => data.pages.filter(page => page.parent === 'home'))
-      .map(sections => (this.sections = sections))
+      .filter((data: Config) => data && !!data.pages)
+      .map((data: Config) => data.pages.filter(page => page.parent === 'home'))
+      .map((sections: Page[]) => (this.sections = sections))
       .subscribe();
 
     this.store.dispatch(new LoadConfigAction());

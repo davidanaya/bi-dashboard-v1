@@ -6,7 +6,8 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
 import { Store } from '@ngrx/store';
 import { AppState } from 'app/state/state';
 
-import { ConfigLoadedAction } from 'app/state/actions/config';
+import { UpdateConfigAction } from 'app/state/actions/config';
+import { Config } from 'app/models/config.model';
 
 @Component({
   selector: 'cp-config-pane',
@@ -24,7 +25,7 @@ import { ConfigLoadedAction } from 'app/state/actions/config';
   styleUrls: ['./config-pane.component.scss']
 })
 export class ConfigPaneComponent implements OnInit {
-  data: any;
+  data: Config;
 
   form = this.fb.group({
     config: this.fb.control({})
@@ -37,7 +38,7 @@ export class ConfigPaneComponent implements OnInit {
   }
 
   private loadData() {
-    this.store.select('config').subscribe(config => {
+    this.store.select('config').subscribe((config: Config) => {
       this.data = config;
       this.form.get('config').setValue(JSON.stringify(config, undefined, 2));
     });
@@ -45,6 +46,6 @@ export class ConfigPaneComponent implements OnInit {
 
   onSubmit() {
     const config = JSON.parse(this.form.get('config').value);
-    this.store.dispatch(new ConfigLoadedAction(config));
+    this.store.dispatch(new UpdateConfigAction(config));
   }
 }

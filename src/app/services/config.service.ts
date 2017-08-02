@@ -9,13 +9,14 @@ import 'rxjs/add/operator/do';
 import { Store } from '@ngrx/store';
 import { AppState } from 'app/state/state';
 
-import { CONFIG_MOCK } from '../data/config.mock';
+import { CONFIG_MOCK } from './config.mock';
 import { AuthService } from 'app/auth/shared/services/auth.service';
 import { ConfigLoadedAction } from 'app/state/actions/config';
+import { Config } from 'app/models/config.model';
 
 @Injectable()
 export class ConfigService {
-  config$: Observable<any>;
+  config$: Observable<Config>;
 
   constructor(
     private store: Store<AppState>,
@@ -23,7 +24,7 @@ export class ConfigService {
     private authService: AuthService
   ) {}
 
-  getData(): Observable<any> {
+  getConfig(): Observable<Config> {
     if (!this.config$) {
       this.init();
     }
@@ -33,10 +34,14 @@ export class ConfigService {
   private init() {
     this.config$ = this.db
       .object(`configs/${this.uid}`)
-      .map(data => data.$exists() || CONFIG_MOCK);
+      .map(data => data.$exists() ? data : CONFIG_MOCK);
   }
 
   get uid() {
     return this.authService.user.uid;
+  }
+
+  updateConfig(config: Config) {
+    this.db.object(`configs/${this.uid}`).set(config);
   }
 }

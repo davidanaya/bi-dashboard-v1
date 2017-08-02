@@ -16,6 +16,7 @@ import { SectionComponent } from '../../components/section/section.component';
 
 import { Store } from '@ngrx/store';
 import { AppState } from 'app/state/state';
+import { Page } from 'app/models/config.model';
 
 export const PageComponents = [SectionComponent, DashboardComponent];
 
@@ -64,7 +65,7 @@ export class PageComponent implements OnInit {
 
   private subscribeToConfigurationChanges(
     pageComponent: ComponentRef<{}>,
-    content: any
+    content: Page
   ) {
     const url = content.link;
     this.store
