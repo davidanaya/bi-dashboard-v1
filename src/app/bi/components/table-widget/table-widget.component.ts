@@ -84,7 +84,7 @@ export class TableWidgetComponent implements OnInit {
 
   ngOnInit() {}
 
-  onClick(item, index) {
+  onClick(item: any, index?: number) {
     console.log('table cell clicked', item, index);
   }
 }
