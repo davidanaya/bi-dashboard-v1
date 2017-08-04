@@ -9,14 +9,17 @@ import 'rxjs/add/operator/do';
 import { Store } from '@ngrx/store';
 import { AppState } from 'app/state/state';
 
-import { CONFIG_MOCK } from './config.mock';
 import { AuthService } from 'app/auth/shared/services/auth.service';
-import { ConfigLoadedAction } from 'app/state/actions/config';
-import { Config } from 'app/models/config.model';
+import { LoadTeamsAction } from 'app/state/actions/teams';
+import { TEAMS_MOCK } from 'app/services/teams.mock';
+
+export interface Team {
+  name: string;
+}
 
 @Injectable()
-export class ConfigService {
-  config$: Observable<Config>;
+export class TeamsService {
+  teams$: Observable<Team[]>;
 
   constructor(
     private store: Store<AppState>,
@@ -24,24 +27,20 @@ export class ConfigService {
     private authService: AuthService
   ) {}
 
-  getConfig(): Observable<Config> {
-    if (!this.config$) {
+  getTeams(): Observable<Team[]> {
+    if (!this.teams$) {
       this.init();
     }
-    return this.config$;
+    return this.teams$;
   }
 
   private init() {
-    this.config$ = this.db
-      .object(`configs/${this.uid}`)
-      .map(data => (data.$exists() ? data : CONFIG_MOCK));
+    this.teams$ = this.db
+      .list(`teams/${this.uid}`)
+      .map(data => data.length ? data : TEAMS_MOCK);
   }
 
   get uid() {
     return this.authService.user.uid;
-  }
-
-  updateConfig(config: Config) {
-    this.db.object(`configs/${this.uid}`).set(config);
   }
 }
