@@ -1,6 +1,6 @@
 import { User } from 'app/auth/shared/models/user.model';
 import { Config } from 'app/models/config.model';
-import { Team } from 'app/teams/services/teams.service';
+import { Team } from 'app/models/team.model';
 
 export interface AppState {
   user: User;

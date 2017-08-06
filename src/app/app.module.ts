@@ -26,9 +26,7 @@ import { ConfigPaneComponent } from 'app/containers/config-pane/config-pane.comp
 // services
 import { LoadConfigEffectService } from 'app/state/effects/load-config-effect.service';
 import { UpdateConfigEffectService } from 'app/state/effects/update-config-effect.service';
-import { LoadTeamsEffectService } from 'app/state/effects/load-teams-effect.service';
 import { ConfigService } from 'app/services/config.service';
-import { TeamsService } from 'app/services/teams.service';
 
 // guards
 import { AuthGuard } from 'app/auth/shared/guards/auth.guard';
@@ -73,14 +71,12 @@ const routes: Routes = [
     StoreModule.provideStore(storeReducer),
     EffectsModule.run(LoadConfigEffectService),
     EffectsModule.run(UpdateConfigEffectService),
-    EffectsModule.run(LoadTeamsEffectService),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     AuthModule,
     RouterModule.forRoot(routes, { enableTracing: false })
   ],
   providers: [
     ConfigService,
-    TeamsService,
     {
       provide: RouteReuseStrategy,
       useClass: CustomReuseStrategy
