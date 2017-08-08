@@ -17,6 +17,8 @@ import {
 } from '@angular/forms';
 
 import { Team } from 'app/models/team.model';
+import { AuthService } from 'app/auth/shared/services/auth.service';
+import { TeamsService } from 'app/teams/services/teams.service';
 
 @Component({
   selector: 'cp-team-form',
@@ -56,13 +58,13 @@ import { Team } from 'app/models/team.model';
             <a class="button button--cancel" [routerLink]="['../']">Cancel</a>
           </div>
 
-          <div class="meal-form__delete" *ngIf="exists">
+          <div class="team-form__delete" *ngIf="exists">
             <div *ngIf="toggled">
               <p>Delete item?</p>
               <button class="confirm" type="button" (click)="removeTeam()">Yes</button>
               <button class="cancel" type="button" (click)="toggle()">No</button>
             </div>
-  
+
             <button class="button button--delete" type="button" (click)="toggle()">Delete</button>
           </div>
         </div>
@@ -84,10 +86,10 @@ export class TeamFormComponent implements OnChanges {
 
   form = this.fb.group({
     name: ['', Validators.required],
-    members: this.fb.array([''])
+    members: this.fb.array([this.teamsService.uid])
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private teamsService: TeamsService) {}
 
   ngOnChanges(changes: SimpleChanges) {
     if (this.team && this.team.name) {

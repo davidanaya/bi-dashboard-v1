@@ -13,6 +13,7 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/toPromise';
 
 if (environment.production) {
   enableProdMode();

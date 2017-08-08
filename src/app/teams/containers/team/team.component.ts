@@ -61,7 +61,11 @@ export class TeamComponent implements OnInit, OnDestroy {
   }
 
   async addTeam(event: Team) {
-    await this.teamsService.addTeam(event);
+    try {
+      await this.teamsService.addTeam(event);
+    } catch (e) {
+      console.error(e);
+    }
     this.backToTeams();
   }
 
@@ -73,7 +77,11 @@ export class TeamComponent implements OnInit, OnDestroy {
 
   async removeTeam(event: Team) {
     const key = this.route.snapshot.params.id;
-    await this.teamsService.removeTeam(key);
+    try {
+      await this.teamsService.removeTeam(key);
+    } catch (e) {
+      console.error('Error', e);
+    }
     this.backToTeams();
   }
 
