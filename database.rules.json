@@ -5,6 +5,20 @@
         ".read": "$uid === auth.uid",
         ".write": "$uid === auth.uid"
       }
+    },
+    "configs": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    },
+    "teams": {
+      ".read": true,
+      ".write": true
+    },
+    "members": {
+      ".read": true,
+      ".write": true
     }
   }
 }
