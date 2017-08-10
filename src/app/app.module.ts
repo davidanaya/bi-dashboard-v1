@@ -41,14 +41,18 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'teams',
+    loadChildren: './teams/teams.module#TeamsModule'
+  },
+  {
     path: '',
     pathMatch: 'full',
     redirectTo: 'home'
   },
-  {
-    path: 'bi',
-    loadChildren: './bi/bi.module#BiModule'
-  }
+  // {
+  //   path: 'bi',
+  //   loadChildren: './bi/bi.module#BiModule'
+  // }
 ];
 
 @NgModule({

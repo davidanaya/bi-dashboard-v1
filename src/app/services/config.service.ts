@@ -34,7 +34,7 @@ export class ConfigService {
   private init() {
     this.config$ = this.db
       .object(`configs/${this.uid}`)
-      .map(data => data.$exists() ? data : CONFIG_MOCK);
+      .map(data => (data.$exists() ? data : CONFIG_MOCK));
   }
 
   get uid() {

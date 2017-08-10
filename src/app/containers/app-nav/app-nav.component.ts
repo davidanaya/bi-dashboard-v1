@@ -12,8 +12,9 @@ import { Config, Page } from 'app/models/config.model';
   selector: 'cp-app-nav',
   template: `
     <div class="app-nav">
-      <a [routerLink]="'/'">&nbsp;Home&nbsp;</a>
-      <a *ngFor="let item of sections" [routerLink]="item.link">&nbsp;{{ item.title }}&nbsp;</a>
+      <a routerLink="/">Home</a>
+      <a routerLink="/teams" routerLinkActive="active">Teams</a>
+      <!-- a *ngFor="let item of sections" [routerLink]="item.link">&nbsp;{{ item.title }}&nbsp;</a -->
     </div>
   `,
   styleUrls: ['./app-nav.component.scss']

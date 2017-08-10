@@ -15,6 +15,8 @@ import {
   handleUserLoggedOutAction
 } from 'app/state/reducers/auth-reducers';
 
+import { handleTeamsLoadedAction } from 'app/state/reducers/teams-reducer';
+import { TEAMS_LOADED_ACTION } from 'app/state/actions/teams';
 
 export function storeReducer(
   state: AppState = INITIAL_STATE,
@@ -27,6 +29,8 @@ export function storeReducer(
       return handleUserAuthenticatedAction(state, action);
     case USER_LOGGED_OUT_ACTION:
       return handleUserLoggedOutAction(state, action);
+    case TEAMS_LOADED_ACTION:
+      return handleTeamsLoadedAction(state, action);
     default:
       return state;
   }

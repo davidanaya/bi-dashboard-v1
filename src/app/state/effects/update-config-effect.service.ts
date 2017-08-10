@@ -18,7 +18,7 @@ export class UpdateConfigEffectService {
   @Effect({ dispatch: false })
   config$: Observable<Action> = this.actions$
     .ofType(UPDATE_CONFIG_ACTION)
-    .do(action => this.service.updateConfig(action.payload));
+    .do(action => this.updateConfig(action.payload));
 
   constructor(private actions$: Actions, private service: ConfigService) {}
 
