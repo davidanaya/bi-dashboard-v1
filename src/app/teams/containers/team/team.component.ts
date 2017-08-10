@@ -53,7 +53,9 @@ export class TeamComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subscription = this.teamsService.teams$.subscribe();
-    this.team$ = this.route.params.switchMap(param => this.teamsService.getTeam(param.id));
+    this.team$ = this.route.params.switchMap(param =>
+      this.teamsService.getTeam(param.id)
+    );
   }
 
   ngOnDestroy() {
@@ -64,14 +66,18 @@ export class TeamComponent implements OnInit, OnDestroy {
     try {
       await this.teamsService.addTeam(event);
     } catch (e) {
-      console.error(e);
+      console.error('addTeam', e);
     }
     this.backToTeams();
   }
 
   async updateTeam(event: Team) {
     const key = this.route.snapshot.params.id;
-    await this.teamsService.updateTeam(key, event);
+    try {
+      await this.teamsService.updateTeam(key, event);
+    } catch (e) {
+      console.error('updateTeam', e);
+    }
     this.backToTeams();
   }
 
@@ -80,7 +86,7 @@ export class TeamComponent implements OnInit, OnDestroy {
     try {
       await this.teamsService.removeTeam(key);
     } catch (e) {
-      console.error('Error', e);
+      console.error('removeTeam', e);
     }
     this.backToTeams();
   }

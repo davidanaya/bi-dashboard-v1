@@ -67,7 +67,28 @@ export class TeamsService {
   }
 
   updateTeam(key: string, team: Team) {
-    return this.db.object(`teams/${this.uid}/${key}`).update(team);
+    const dataToUpdate = {};
+
+    this.findMembersInTeam(key)
+      .take(1)
+      .do(members => {
+        members.forEach(m => {
+          // remove members not in the new team
+          if (team.members.indexOf(m) === -1) {
+            dataToUpdate[`members/${m}/teams/${key}`] = null;
+          }
+        });
+        team.members.forEach(m => {
+          // add new members in team
+          if (members.indexOf(m) === -1) {
+            dataToUpdate[`members/${m}/teams/${key}`] = true;
+          }
+        });
+
+        dataToUpdate[`teams/${key}`] = this.viewModelToFirebase(team);
+        this.sdkDB.update(dataToUpdate);
+      })
+      .toPromise();
   }
 
   removeTeam(key: string) {
