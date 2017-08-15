@@ -12,9 +12,18 @@ import { Config, Page } from 'app/models/config.model';
   selector: 'cp-app-nav',
   template: `
     <div class="app-nav">
-      <a routerLink="/">Home</a>
-      <a routerLink="/profile" routerLinkActive="active">Profile</a>
-      <a routerLink="/teams" routerLinkActive="active">Teams</a>
+      <a routerLink="/">
+        <i class="fa fa-home" aria-hidden="true"> Home</i>
+      </a>
+      <a routerLink="/profile" routerLinkActive="active">
+        <i class="fa fa-user-circle-o" aria-hidden="true"> Profile</i>
+      </a>
+      <a routerLink="/data-rooms" routerLinkActive="active">
+        <i class="fa fa-desktop" aria-hidden="true"> Data Rooms</i>
+      </a>
+      <a routerLink="/teams" routerLinkActive="active">
+        <i class="fa fa-users" aria-hidden="true"> Teams</i>
+      </a>
       <!-- a *ngFor="let item of sections" [routerLink]="item.link">&nbsp;{{ item.title }}&nbsp;</a -->
     </div>
   `,

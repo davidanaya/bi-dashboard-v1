@@ -8,7 +8,6 @@ import { AuthGuard } from 'app/auth/shared/guards/auth.guard';
 import { TeamsComponent } from './containers/teams/teams.component';
 import { TeamComponent } from './containers/team/team.component';
 import { TeamFormComponent } from './components/team-form/team-form.component';
-import { ListItemComponent } from './components/list-item/list-item.component';
 import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
@@ -16,17 +15,17 @@ const routes: Routes = [
     path: '',
     component: TeamsComponent,
     canActivate: [AuthGuard]
-  },
-  {
-    path: 'new',
-    component: TeamComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: ':id',
-    component: TeamComponent,
-    canActivate: [AuthGuard]
   }
+  // {
+  //   path: 'new',
+  //   component: TeamComponent,
+  //   canActivate: [AuthGuard]
+  // },
+  // {
+  //   path: ':id',
+  //   component: TeamComponent,
+  //   canActivate: [AuthGuard]
+  // }
 ];
 
 @NgModule({
@@ -40,8 +39,7 @@ const routes: Routes = [
   declarations: [
     TeamsComponent,
     TeamComponent,
-    TeamFormComponent,
-    ListItemComponent
+    TeamFormComponent
   ]
 })
 export class TeamsModule {}

@@ -21,6 +21,9 @@ import { TEAMS_LOADED_ACTION } from 'app/state/actions/teams';
 import { PROFILE_LOADED_ACTION } from 'app/state/actions/profile';
 import { handleProfileLoadedAction } from 'app/state/reducers/profile-reducer';
 
+import { DATA_ROOMS_LOADED_ACTION } from 'app/state/actions/data-rooms';
+import { handleDataRoomsLoadedAction } from 'app/state/reducers/data-rooms-reducers';
+
 export function storeReducer(
   state: AppState = INITIAL_STATE,
   action: Action
@@ -36,6 +39,8 @@ export function storeReducer(
       return handleProfileLoadedAction(state, action);
     case TEAMS_LOADED_ACTION:
       return handleTeamsLoadedAction(state, action);
+    case DATA_ROOMS_LOADED_ACTION:
+      return handleDataRoomsLoadedAction(state, action);
     default:
       return state;
   }

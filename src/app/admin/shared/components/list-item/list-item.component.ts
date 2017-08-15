@@ -49,6 +49,6 @@ export class ListItemComponent implements OnInit {
   }
 
   getRoute(item: any) {
-    return [`../teams`, item.$key];
+    return [`../data-rooms`, item.$key];
   }
 }

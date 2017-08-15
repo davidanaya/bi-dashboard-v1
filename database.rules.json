@@ -7,16 +7,22 @@
       }
     },
     "configs": {
-      "$uid": {
-        ".read": "$uid === auth.uid",
-        ".write": "$uid === auth.uid"
-      }
+      ".read": true,
+      ".write": true
     },
     "teams": {
       ".read": true,
       ".write": true
     },
     "members": {
+      ".read": true,
+      ".write": true
+    },
+    "dataRooms": {
+      ".read": true,
+      ".write": true
+    },
+    "dataRoomsPerMember": {
       ".read": true,
       ".write": true
     }

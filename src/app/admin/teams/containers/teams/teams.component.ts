@@ -15,6 +15,15 @@ import { TeamsService } from 'app/admin/shared/services/teams/teams.service';
     <div class="teams">
       <div class="teams__title">
         <h2>Your teams</h2>
+      </div>
+      <div class="">
+        <i class="fa fa-hand-spock-o" aria-hidden="true"> Sorry, there's no support for teams yet.</i>
+      </div>
+    </div>
+    <!--
+    <div class="teams">
+      <div class="teams__title">
+        <h2>Your teams</h2>
         <a class="btn__add" [routerLink]="['../teams/new']">New team</a>
       </div>
       <div *ngIf="teams$ | async as teams; else loading;">
@@ -29,6 +38,7 @@ import { TeamsService } from 'app/admin/shared/services/teams/teams.service';
         </div>
       </ng-template>
     </div>
+    -->
   `,
   styleUrls: ['./teams.component.scss']
 })

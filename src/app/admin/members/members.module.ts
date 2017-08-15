@@ -24,9 +24,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     SharedModule
   ],
-  declarations: [
-    MemberComponent,
-    ProfileFormComponent
-  ]
+  declarations: [MemberComponent, ProfileFormComponent]
 })
-export class MembersModule { }
+export class MembersModule {}

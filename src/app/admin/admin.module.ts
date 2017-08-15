@@ -12,6 +12,11 @@ const routes: Routes = [
     loadChildren: './members/members.module#MembersModule'
   },
   {
+    path: 'data-rooms',
+    canActivate: [AuthGuard],
+    loadChildren: './data-rooms/data-rooms.module#DataRoomsModule'
+  },
+  {
     path: 'teams',
     canActivate: [AuthGuard],
     loadChildren: './teams/teams.module#TeamsModule'
