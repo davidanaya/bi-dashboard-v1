@@ -18,6 +18,9 @@ import {
 import { handleTeamsLoadedAction } from 'app/state/reducers/teams-reducer';
 import { TEAMS_LOADED_ACTION } from 'app/state/actions/teams';
 
+import { PROFILE_LOADED_ACTION } from 'app/state/actions/profile';
+import { handleProfileLoadedAction } from 'app/state/reducers/profile-reducer';
+
 export function storeReducer(
   state: AppState = INITIAL_STATE,
   action: Action
@@ -29,6 +32,8 @@ export function storeReducer(
       return handleUserAuthenticatedAction(state, action);
     case USER_LOGGED_OUT_ACTION:
       return handleUserLoggedOutAction(state, action);
+    case PROFILE_LOADED_ACTION:
+      return handleProfileLoadedAction(state, action);
     case TEAMS_LOADED_ACTION:
       return handleTeamsLoadedAction(state, action);
     default:

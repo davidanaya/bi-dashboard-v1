@@ -7,8 +7,8 @@ import { Subscription } from 'rxjs/Subscription';
 import { Store } from '@ngrx/store';
 import { AppState } from 'app/state/state';
 
-import { TeamsService } from '../../services/teams.service';
 import { Team } from 'app/models/team.model';
+import { TeamsService } from 'app/admin/shared/services/teams/teams.service';
 
 @Component({
   selector: 'cp-team',

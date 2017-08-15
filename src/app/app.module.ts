@@ -15,6 +15,7 @@ import { storeReducer } from 'app/state/reducers/store-reducer';
 
 // modules
 import { AuthModule } from 'app/auth/auth.module';
+import { AdminModule } from 'app/admin/admin.module';
 
 // components
 import { HomeComponent } from 'app/components/home/home.component';
@@ -39,10 +40,6 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     canActivate: [AuthGuard]
-  },
-  {
-    path: 'teams',
-    loadChildren: './teams/teams.module#TeamsModule'
   },
   {
     path: '',
@@ -72,8 +69,9 @@ const routes: Routes = [
     EffectsModule.run(LoadConfigEffectService),
     EffectsModule.run(UpdateConfigEffectService),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
+    RouterModule.forRoot(routes, { enableTracing: false }),
     AuthModule,
-    RouterModule.forRoot(routes, { enableTracing: false })
+    AdminModule
   ],
   providers: [
     ConfigService,

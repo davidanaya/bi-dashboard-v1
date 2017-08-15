@@ -5,12 +5,12 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AuthGuard } from 'app/auth/shared/guards/auth.guard';
 
-import { TeamsComponent } from 'app/teams/containers/teams/teams.component';
-import { TeamComponent } from 'app/teams/containers/team/team.component';
-import { TeamFormComponent } from 'app/teams/components/team-form/team-form.component';
+import { TeamsComponent } from './containers/teams/teams.component';
+import { TeamComponent } from './containers/team/team.component';
+import { TeamFormComponent } from './components/team-form/team-form.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
-import { TeamsService } from 'app/teams/services/teams.service';
 import { JoinPipe } from './pipes/join.pipe';
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
   {
@@ -35,7 +35,8 @@ const routes: Routes = [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    SharedModule
   ],
   declarations: [
     TeamsComponent,
@@ -43,9 +44,6 @@ const routes: Routes = [
     TeamFormComponent,
     ListItemComponent,
     JoinPipe
-  ],
-  providers: [
-    TeamsService
-  ],
+  ]
 })
 export class TeamsModule {}

@@ -14,7 +14,7 @@ import { User } from '../../auth/shared/models/user.model';
   template: `
     <div class="app-header">
       <div class="app-header__user-info" *ngIf="user?.authenticated">
-        <span (click)="logoutUser()">Logout</span>
+        <i class="fa fa-power-off" aria-hidden="true" (click)="logoutUser()"></i>
       </div>
     </div>
   `,

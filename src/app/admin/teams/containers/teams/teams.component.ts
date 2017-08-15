@@ -6,17 +6,15 @@ import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { AppState } from 'app/state/state';
 
-import { TeamsService } from '../../services/teams.service';
 import { Team } from 'app/models/team.model';
+import { TeamsService } from 'app/admin/shared/services/teams/teams.service';
 
 @Component({
   selector: 'cp-teams',
   template: `
     <div class="teams">
       <div class="teams__title">
-        <h1>
-          Your teams
-        </h1>
+        <h2>Your teams</h2>
         <a class="btn__add" [routerLink]="['../teams/new']">New team</a>
       </div>
       <div *ngIf="teams$ | async as teams; else loading;">
