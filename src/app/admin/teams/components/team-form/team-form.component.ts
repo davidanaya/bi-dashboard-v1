@@ -18,7 +18,7 @@ import {
 
 import { Team } from 'app/models/team.model';
 import { AuthService } from 'app/auth/shared/services/auth.service';
-import { TeamsService } from 'app/teams/services/teams.service';
+import { TeamsService } from 'app/admin/shared/services/teams/teams.service';
 
 @Component({
   selector: 'cp-team-form',

@@ -13,6 +13,7 @@ import { Config, Page } from 'app/models/config.model';
   template: `
     <div class="app-nav">
       <a routerLink="/">Home</a>
+      <a routerLink="/profile" routerLinkActive="active">Profile</a>
       <a routerLink="/teams" routerLinkActive="active">Teams</a>
       <!-- a *ngFor="let item of sections" [routerLink]="item.link">&nbsp;{{ item.title }}&nbsp;</a -->
     </div>

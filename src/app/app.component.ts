@@ -18,12 +18,14 @@ import { User } from 'app/auth/shared/models/user.model';
 
       <ng-container *ngIf="(user$ | async)?.authenticated; else not_authenticated">
         <cp-app-nav></cp-app-nav>
+        <!--
         <label>
           <input type="checkbox" [(ngModel)]="showPane" />
           Show Configuration Pane
         </label>
+        -->
         <section class="main">
-          <cp-config-pane *ngIf="showPane"></cp-config-pane>
+          <!-- <cp-config-pane *ngIf="showPane"></cp-config-pane> -->
           <router-outlet></router-outlet>
         </section>
       </ng-container>

@@ -1,4 +1,5 @@
 export interface Member {
-  $key: string;
-  $exists: () => boolean;
+  name: string;
+  $key?: string;
+  $exists?: () => boolean;
 }
