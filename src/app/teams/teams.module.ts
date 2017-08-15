@@ -10,6 +10,7 @@ import { TeamComponent } from 'app/teams/containers/team/team.component';
 import { TeamFormComponent } from 'app/teams/components/team-form/team-form.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { TeamsService } from 'app/teams/services/teams.service';
+import { JoinPipe } from './pipes/join.pipe';
 
 const routes: Routes = [
   {
@@ -40,7 +41,8 @@ const routes: Routes = [
     TeamsComponent,
     TeamComponent,
     TeamFormComponent,
-    ListItemComponent
+    ListItemComponent,
+    JoinPipe
   ],
   providers: [
     TeamsService

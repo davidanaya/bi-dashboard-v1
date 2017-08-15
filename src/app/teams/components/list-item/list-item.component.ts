@@ -15,7 +15,7 @@ import {
       <a [routerLink]="getRoute(item)">
         <p class="list-item__name">{{ item.name }}</p>
         <p class="list-item__members">
-          <span>{{ item.members }}</span>
+          <span>{{ item.members | join }}</span>
         </p>
       </a>
 
